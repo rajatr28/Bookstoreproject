@@ -2,7 +2,10 @@ package com.capgemini.bookstore.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.DynamicInsert;
@@ -12,8 +15,12 @@ import org.hibernate.annotations.DynamicUpdate;
 @Table(name="Customer")
 @DynamicUpdate(true)
 @DynamicInsert(true)
+@SequenceGenerator(name="customerID_gen",initialValue = 1,allocationSize = 50)
 public class Customer {
+	
+	@GeneratedValue(generator="customerId_gen",strategy = GenerationType.SEQUENCE)
 	@Id
+	//@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="customer_id")
 	private Integer customerId;
 	
