@@ -21,10 +21,10 @@ public class BookstoreApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Customer cus = new Customer(10, "rajat", "rjt@gmail.com", "123456", "5414647", "jvgghcghfh", "bangalore", "244412", "India");
-		customerDao.save(cus);
-		// TODO Auto-generated method stub
-		System.out.println("record Inserted");
+//		Customer cus = new Customer(10, "rajat", "rjt@gmail.com", "123456", "5414647", "jvgghcghfh", "bangalore", "244412", "India");
+//		customerDao.save(cus);
+//		// TODO Auto-generated method stub
+//		System.out.println("record Inserted");
 		
 	}
 
