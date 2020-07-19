@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
@@ -20,31 +21,37 @@ public class Customer {
 	
 	@GeneratedValue(generator="customerId_gen",strategy = GenerationType.SEQUENCE)
 	@Id
-	//@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name="customer_id")
 	private Integer customerId;
 	
+	@NotEmpty(message = "Name is required")
 	@Column(name="name")
 	private String fullname;
 	
+	@NotEmpty(message = "Email is required")
 	@Column(name="email")
 	private String email;
 	
+	@NotEmpty(message = "Password is required")
 	@Column(name="password")
 	private String password;
 	
 	@Column(name="phonenumber")
 	private String phonenumber;
 	
+	@NotEmpty(message = "address is required")
 	@Column(name="address")
 	private String address;
 	
+	@NotEmpty(message = "city is required")
 	@Column(name="city")
 	private String city;
 	
 	@Column(name="zipcode")
+	@NotEmpty(message = "zipcode is required")
 	private String zipcode;
 	
+	@NotEmpty(message = "Country is required")
 	@Column(name="country")
 	private String country;
 
